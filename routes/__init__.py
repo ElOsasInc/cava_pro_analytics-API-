@@ -1,5 +1,7 @@
 from .proveedor_routes import router as proveedor_router
+from .dashboard_routes import router as dashboard_router
 
 __all__ = [
-    "proveedor_router"
+    "proveedor_router",
+    "dashboard_router"
 ]

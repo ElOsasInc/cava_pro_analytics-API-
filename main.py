@@ -1,5 +1,5 @@
 from core import settings, db_manager
-from routes import proveedor_router
+from routes import *
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
 
@@ -16,6 +16,7 @@ async def lifespan(app: FastAPI):
 app = FastAPI(lifespan=lifespan)
 
 app.include_router(proveedor_router)
+app.include_router(dashboard_router)
 
 @app.get("/")
 def root():
