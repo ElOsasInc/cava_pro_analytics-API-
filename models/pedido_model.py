@@ -17,8 +17,8 @@ class PedidoModel:
     def get_pedidos_fecha(self, fecha_entrega: date) -> List[Dict[str, Any]]:
         with self.db.cursor() as cur:
             cur.execute(f"""
-                SELECT pedido_id, proveedor_id, fecha_pedido
-                FROM pedido
+                SELECT pedido_id, pro.proveedor_id, pro.nombre as proveedor_nombre, fecha_pedido
+                FROM pedido as p INNER JOIN proveedor as pro ON pro.proveedor_id = p.proveedor_id 
                 WHERE fecha_entrega = '{fecha_entrega}'
                 ORDER BY fecha_pedido;
             """)
