@@ -18,6 +18,7 @@ app = FastAPI(lifespan=lifespan)
 app.include_router(proveedor_router)
 app.include_router(dashboard_router)
 app.include_router(calendario_router)
+app.include_router(cava_router)
 
 @app.get("/")
 def root():
