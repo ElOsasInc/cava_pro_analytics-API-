@@ -18,3 +18,11 @@ class ProveedorModel:
         with self.db.cursor() as cur:
             cur.execute("SELECT * FROM proveedor")
             return cur.fetchall()
+        
+    def lista_proveedores(self) -> List[Dict[str, Any]]:
+        with self.db.cursor() as cur:
+            cur.execute("""
+                SELECT proveedor_id, nombre FROM proveedor
+                ORDER BY nombre;
+            """)
+            return cur.fetchall()
