@@ -8,7 +8,9 @@ class CavaController:
 
     def get_full_cava(self) -> List[Dict[str, Any]]:
         try:
-            cava = self.model.get_all_posiciones()
+            cava = self.model.get_filas()
+            for fila in cava:
+                fila["botellas"] = self.model.get_detalle_fila(fila["fila"])
             return cava
         except Exception as e:
             raise HTTPException(
