@@ -20,6 +20,7 @@ app.include_router(dashboard_router)
 app.include_router(calendario_router)
 app.include_router(cava_router)
 app.include_router(general_router)
+app.include_router(busqueda_router)
 
 @app.get("/")
 def root():
