@@ -8,6 +8,6 @@ router = APIRouter(prefix="/buscar", tags=["buscar"])
 def get_controller(db = Depends(get_db)):
     return BusquedaController(db)
 
-@router.post("/")
+@router.get("/")
 def filtrar_busqueda(busqueda: Busqueda, controller: BusquedaController = Depends(get_controller)):
     return controller.buscar(busqueda)
