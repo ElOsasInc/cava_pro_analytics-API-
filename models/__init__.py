@@ -4,7 +4,7 @@ from .pedido_model import PedidoModel
 from .producto_pedido_model import ProductoPedidoModel
 from .posicion_botella_model import PosicionBotellaModel
 from .vino_model import VinoModel
-from .busqueda_model import Busqueda
+from .busqueda_model import Busqueda, Parametro
 
 __all__ = [
     "Proveedor", "ProveedorModel",
@@ -13,5 +13,5 @@ __all__ = [
     "ProductoPedidoModel",
     "PosicionBotellaModel",
     "VinoModel",
-    "Busqueda"
+    "Busqueda", "Parametro"
 ]
