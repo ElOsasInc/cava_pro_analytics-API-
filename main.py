@@ -2,6 +2,7 @@ from core import settings, db_manager
 from routes import *
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 #ESTO ES EL CICLO DE VIDA DE LA APLICACIÓN PERO EN ASYNC PARA Q JALE MÁS CHIDO
 #XD EL ASYNC ES PARA Q PUEDA MANEJAR MEJOR LAS CONEXIONES
@@ -14,6 +15,14 @@ async def lifespan(app: FastAPI):
     print("fin")
 
 app = FastAPI(lifespan=lifespan)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 app.include_router(proveedor_router)
 app.include_router(dashboard_router)
