@@ -8,6 +8,6 @@ class VinoModel:
     def lista_vinos(self) -> List[Dict[str, Any]]:
         with self.db.cursor() as cur:
             cur.execute("""
-                SELECT vino_key, nombre, marca FROM dim_vino
+                SELECT vino_key as vino_id, nombre, marca FROM dim_vino
             """)
             return cur.fetchall()

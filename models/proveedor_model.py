@@ -17,7 +17,7 @@ class ProveedorModel:
     def lista_proveedores(self) -> List[Dict[str, Any]]:
         with self.db.cursor() as cur:
             cur.execute("""
-                SELECT proveedor_key, nombre FROM dim_proveedor
+                SELECT proveedor_key as proveedor_id, nombre FROM dim_proveedor
                 ORDER BY nombre;
             """)
             return cur.fetchall()
