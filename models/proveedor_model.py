@@ -13,16 +13,11 @@ class Proveedor(BaseModel):
 class ProveedorModel:
     def __init__(self, db_connection):
         self.db = db_connection
-
-    def get_all(self) -> List[Dict[str, Any]]:
-        with self.db.cursor() as cur:
-            cur.execute("SELECT * FROM proveedor")
-            return cur.fetchall()
         
     def lista_proveedores(self) -> List[Dict[str, Any]]:
         with self.db.cursor() as cur:
             cur.execute("""
-                SELECT proveedor_id, nombre FROM proveedor
+                SELECT proveedor_key, nombre FROM dim_proveedor
                 ORDER BY nombre;
             """)
             return cur.fetchall()

@@ -24,7 +24,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(proveedor_router)
 app.include_router(dashboard_router)
 app.include_router(calendario_router)
 app.include_router(cava_router)

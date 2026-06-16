@@ -8,5 +8,5 @@ def get_controller(db = Depends(get_db)):
     return GeneralController(db)
 
 @router.get("/")
-def get_clientes(controller: GeneralController = Depends(get_controller)):
+def get_selects(controller: GeneralController = Depends(get_controller)):
     return controller.get_selects()
