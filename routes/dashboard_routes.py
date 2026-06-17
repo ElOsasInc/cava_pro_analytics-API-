@@ -8,5 +8,5 @@ def get_controller(db = Depends(get_db)):
     return DashboardController(db)
 
 @router.get("/")
-def get_clientes(controller: DashboardController = Depends(get_controller)):
+def get_dashboard(controller: DashboardController = Depends(get_controller)):
     return controller.get_dashboard_stats()
