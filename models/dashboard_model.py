@@ -61,7 +61,7 @@ class DashboardModel:
     def get_pedidos_10semanas(self) -> List[Dict[str, Any]]:
         with self.db.cursor() as cur:
             cur.execute("""
-                SELECT DISTINCT(DATE_TRUNC('week', fecha_key)::DATE) as semana, total_pedidos
+                SELECT DISTINCT(DATE_TRUNC('week', fecha_key)::DATE) as semana, COALESCE(total_pedidos, 0) as total_pedidos
                 FROM dim_fecha as df
                 LEFT JOIN (
                     SELECT DATE_TRUNC('week', fecha_key)::DATE as semana, COUNT(DISTINCT(pedido_id_original)) as total_pedidos
