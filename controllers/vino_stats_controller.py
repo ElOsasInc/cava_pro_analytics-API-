@@ -17,6 +17,14 @@ class VinoStatsController:
                 "ventas_x_dia_semana": {
                     "tipo": "Bar",
                     "data": self.vino_stats_model.ventas_x_dia_semana(rango)
+                },
+                "copa_x_botella": {
+                    "tipo": "Bar",
+                    "data": self.vino_stats_model.copa_x_botella(rango)
+                },
+                "historial_precios": {
+                    "tipo": "Line",
+                    "data": self.vino_stats_model.historial_precios(rango)
                 }
             }
             return vino_stats

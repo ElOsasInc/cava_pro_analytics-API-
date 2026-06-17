@@ -46,3 +46,28 @@ class VinoStatsModel:
                 ORDER BY EXTRACT(ISODOW FROM df.fecha_key);
             ''')
             return cur.fetchall()
+
+    def copa_x_botella(self, rango: Busqueda1Vino) -> List[Dict[str, Any]]:
+        with self.db.cursor() as cur:
+            cur.execute(f'''
+                SELECT DISTINCT(hv.tipo) as presentacion, COALESCE(total_ml, 0) as total_ml, ROUND(COALESCE(total_ganancia, 0)::NUMERIC, 2) as total_gananacia
+                FROM hechos_ventas as hv
+                LEFT JOIN (
+                    SELECT hv.tipo, SUM(ml) as total_ml, SUM(precio) as total_ganancia
+                    FROM hechos_ventas as hv
+                    INNER JOIN dim_botella as db ON db.botella_key = hv.botella_key
+                    INNER JOIN dim_vino as dv ON dv.vino_key = db.vino_key
+                    WHERE db.vino_key = {rango.vino_key} AND hv.fecha_key BETWEEN '{rango.fecha_inicio}' AND '{rango.fecha_fin}'
+                    GROUP BY hv.tipo
+                ) as rv ON rv.tipo = hv.tipo;     
+            ''')
+            return cur.fetchall()
+
+    def historial_precios(self, rango: Busqueda1Vino) -> List[Dict[str, Any]]:
+        with self.db.cursor() as cur:
+            cur.execute(f'''
+                SELECT fecha_key, ROUND(precio_botella ::NUMERIC, 2) AS precio_botella, ROUND(precio_copa ::NUMERIC, 2) AS precio_copa
+                FROM hechos_preciosvinos as hp
+                WHERE vino_key = {rango.vino_key} AND fecha_key BETWEEN '{rango.fecha_inicio}' AND '{rango.fecha_fin}';
+            ''')
+            return cur.fetchall()
