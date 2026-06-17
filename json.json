@@ -1,0 +1,242 @@
+[
+{
+    "pedidos_mensuales": {
+        "tipo":"Line",
+        "data":[
+            { "mes": "2025 JUL", "cantidad_pedidos": 9 },
+            { "mes": "2025 AUG", "cantidad_pedidos": 12 },
+            { "mes": "2025 SEP", "cantidad_pedidos": 7 },
+            { "mes": "2025 OCT", "cantidad_pedidos": 15 },
+            { "mes": "2025 NOV", "cantidad_pedidos": 11 },
+            { "mes": "2025 DEC", "cantidad_pedidos": 18 },
+            { "mes": "2026 JAN", "cantidad_pedidos": 6 },
+            { "mes": "2026 FEB", "cantidad_pedidos": 8 },
+            { "mes": "2026 MAR", "cantidad_pedidos": 10 },
+            { "mes": "2026 APR", "cantidad_pedidos": 14 },
+            { "mes": "2026 MAY", "cantidad_pedidos": 13 },
+            { "mes": "2026 JUN", "cantidad_pedidos": 11 }
+        ]
+    },
+    "costo_mensual":{
+        "tipo": "Line",
+        "data": [
+            { "mes": "2025 JUL", "costo_promedio": 950 },
+            { "mes": "2025 AUG", "costo_promedio": 1100 },
+            { "mes": "2025 SEP", "costo_promedio": 870 },
+            { "mes": "2025 OCT", "costo_promedio": 1200 },
+            { "mes": "2025 NOV", "costo_promedio": 980 },
+            { "mes": "2025 DEC", "costo_promedio": 1400 },
+            { "mes": "2026 JAN", "costo_promedio": 1100 },
+            { "mes": "2026 FEB", "costo_promedio": 1150 },
+            { "mes": "2026 MAR", "costo_promedio": 950 },
+            { "mes": "2026 APR", "costo_promedio": 1300 },
+            { "mes": "2026 MAY", "costo_promedio": 1020 },
+            { "mes": "2026 JUN", "costo_promedio": 1005 }
+        ]
+     },
+    "top_5productos_baratos": {
+        "tipo": "Bar",
+        "data": [
+            { "vino_nombre": "Torrontés", "costo": 8.75 },
+            { "vino_nombre": "Malbec Reserva", "costo": 10.50 },
+            { "vino_nombre": "Cabernet Sauvignon", "costo": 12.30 },
+            { "vino_nombre": "Merlot", "costo": 14.20 },
+            { "vino_nombre": "Syrah Gran Reserva", "costo": 18.90 }
+        ]
+    },
+    "tiempo_entrega_promedio": {
+        "tipo": "Line",
+        "data": [
+            { "mes": "2025 JUL", "tiempo_promedio_dias": 6 },
+            { "mes": "2025 AUG", "tiempo_promedio_dias": 5 },
+            { "mes": "2025 SEP", "tiempo_promedio_dias": 8 },
+            { "mes": "2025 OCT", "tiempo_promedio_dias": 7 },
+            { "mes": "2025 NOV", "tiempo_promedio_dias": 9 },
+            { "mes": "2025 DEC", "tiempo_promedio_dias": 10 },
+            { "mes": "2026 JAN", "tiempo_promedio_dias": 6 },
+            { "mes": "2026 FEB", "tiempo_promedio_dias": 5 },
+            { "mes": "2026 MAR", "tiempo_promedio_dias": 7 },
+            { "mes": "2026 APR", "tiempo_promedio_dias": 4 },
+            { "mes": "2026 MAY", "tiempo_promedio_dias": 5 },
+            { "mes": "2026 JUN", "tiempo_promedio_dias": 5 }
+        ]
+    }
+},
+
+
+
+{
+    "comp_costo_mensual": {
+        "tipo": "Bar",
+        "data": {
+            "Ruben": [
+                { "mes": "2025 JUL", "costo_promedio": 950 },
+                { "mes": "2025 AUG", "costo_promedio": 1100 },
+                { "mes": "2025 SEP", "costo_promedio": 870 },
+                { "mes": "2025 OCT", "costo_promedio": 1200 },
+                { "mes": "2025 NOV", "costo_promedio": 980 },
+                { "mes": "2025 DEC", "costo_promedio": 1400 },
+                { "mes": "2026 JAN", "costo_promedio": 1100 },
+                { "mes": "2026 FEB", "costo_promedio": 1150 },
+                { "mes": "2026 MAR", "costo_promedio": 950 },
+                { "mes": "2026 APR", "costo_promedio": 1300 },
+                { "mes": "2026 MAY", "costo_promedio": 1020 },
+                { "mes": "2026 JUN", "costo_promedio": 1005 }
+            ],
+            "Axel": [
+                { "mes": "2025 JUL", "costo_promedio": 880 },
+                { "mes": "2025 AUG", "costo_promedio": 1250 },
+                { "mes": "2025 SEP", "costo_promedio": 920 },
+                { "mes": "2025 OCT", "costo_promedio": 1080 },
+                { "mes": "2025 NOV", "costo_promedio": 1350 },
+                { "mes": "2025 DEC", "costo_promedio": 1500 },
+                { "mes": "2026 JAN", "costo_promedio": 970 },
+                { "mes": "2026 FEB", "costo_promedio": 850 },
+                { "mes": "2026 MAR", "costo_promedio": 1120 },
+                { "mes": "2026 APR", "costo_promedio": 1280 },
+                { "mes": "2026 MAY", "costo_promedio": 1450 },
+                { "mes": "2026 JUN", "costo_promedio": 1150 }
+            ]
+        }
+    },
+    "comp_tiempo_promedio": {
+        "tipo": "Bar",
+        "data": [
+            { "proveedor": "Ruben", "dias_tiempo_promedio": 5 },
+            { "proveedor": "Axel", "dias_tiempo_promedio": 8 }
+        ]
+    },
+    "comp_pedidos_mensual": {
+        "tipo": "Line",
+        "data":{
+            "Ruben":[
+                { "mes": "2025 JUL", "cantidad_pedidos": 9 },
+                { "mes": "2025 AUG", "cantidad_pedidos": 12 },
+                { "mes": "2025 SEP", "cantidad_pedidos": 7 },
+                { "mes": "2025 OCT", "cantidad_pedidos": 15 },
+                { "mes": "2025 NOV", "cantidad_pedidos": 11 },
+                { "mes": "2025 DEC", "cantidad_pedidos": 18 },
+                { "mes": "2026 JAN", "cantidad_pedidos": 6 },
+                { "mes": "2026 FEB", "cantidad_pedidos": 8 },
+                { "mes": "2026 MAR", "cantidad_pedidos": 10 },
+                { "mes": "2026 APR", "cantidad_pedidos": 14 },
+                { "mes": "2026 MAY", "cantidad_pedidos": 13 },
+                { "mes": "2026 JUN", "cantidad_pedidos": 11 }
+            ],
+            "Axel":[
+                { "mes": "2025 JUL", "cantidad_pedidos": 14 },
+                { "mes": "2025 AUG", "cantidad_pedidos": 9 },
+                { "mes": "2025 SEP", "cantidad_pedidos": 11 },
+                { "mes": "2025 OCT", "cantidad_pedidos": 16 },
+                { "mes": "2025 NOV", "cantidad_pedidos": 8 },
+                { "mes": "2025 DEC", "cantidad_pedidos": 22 },
+                { "mes": "2026 JAN", "cantidad_pedidos": 5 },
+                { "mes": "2026 FEB", "cantidad_pedidos": 10 },
+                { "mes": "2026 MAR", "cantidad_pedidos": 13 },
+                { "mes": "2026 APR", "cantidad_pedidos": 17 },
+                { "mes": "2026 MAY", "cantidad_pedidos": 9 },
+                { "mes": "2026 JUN", "cantidad_pedidos": 15 }
+            ]
+        }
+    }
+    
+},
+
+
+
+{
+    "comp_ventas_vinos": {
+        "tipo": "Bar",
+        "data": [
+            {
+                "vino_nombre": "Malbec Reserva",
+                "ml_vendidos": 15000,
+                "ganancias_totales": 112500
+            },
+            {
+                "vino_nombre": "Torrontés",
+                "ml_vendidos": 8000,
+                "ganancias_totales": 52000
+            }
+        ]
+    },
+    "comp_preferencia_hora": {
+        "tipo":"Bar",
+        "data": [
+            { "hora": 0, "Malbec Reserva": 0, "Torrontés": 0 },
+            { "hora": 1, "Malbec Reserva": 0, "Torrontés": 0 },
+            { "hora": 2, "Malbec Reserva": 0, "Torrontés": 0 },
+            { "hora": 3, "Malbec Reserva": 0, "Torrontés": 0 },
+            { "hora": 4, "Malbec Reserva": 0, "Torrontés": 0 },
+            { "hora": 5, "Malbec Reserva": 0, "Torrontés": 0 },
+            { "hora": 6, "Malbec Reserva": 0, "Torrontés": 0 },
+            { "hora": 7, "Malbec Reserva": 0, "Torrontés": 0 },
+            { "hora": 8, "Malbec Reserva": 0, "Torrontés": 0 },
+            { "hora": 9, "Malbec Reserva": 2, "Torrontés": 1 },
+            { "hora": 10, "Malbec Reserva": 5, "Torrontés": 3 },
+            { "hora": 11, "Malbec Reserva": 12, "Torrontés": 8 },
+            { "hora": 12, "Malbec Reserva": 18, "Torrontés": 12 },
+            { "hora": 13, "Malbec Reserva": 15, "Torrontés": 10 },
+            { "hora": 14, "Malbec Reserva": 10, "Torrontés": 7 },
+            { "hora": 15, "Malbec Reserva": 8, "Torrontés": 5 },
+            { "hora": 16, "Malbec Reserva": 14, "Torrontés": 9 },
+            { "hora": 17, "Malbec Reserva": 20, "Torrontés": 14 },
+            { "hora": 18, "Malbec Reserva": 25, "Torrontés": 18 },
+            { "hora": 19, "Malbec Reserva": 30, "Torrontés": 22 },
+            { "hora": 20, "Malbec Reserva": 28, "Torrontés": 20 },
+            { "hora": 21, "Malbec Reserva": 22, "Torrontés": 15 },
+            { "hora": 22, "Malbec Reserva": 15, "Torrontés": 10 },
+            { "hora": 23, "Malbec Reserva": 6, "Torrontés": 4 }
+        ]
+    },
+    "comp_preferencia_presentacion": {
+        "tipo":"Bar",
+        "data": [
+            {"presentacion": "copa", "Malbec Reserva": 136, "Torrontés": 103},
+            {"presentacion": "botella", "Malbec Reserva": 45, "Torrontés": 47}
+        ]
+    },
+    "cantidad_botellas": {
+        "tipo":"Bar",
+        "data": [
+            {"vino_nombre": "Malbec Reserva", "cant_botellas": 54},
+            {"vino_nombre": "Torrontés", "cant_botellas": 30}
+        ]
+    }
+},
+
+
+
+{
+    "historial_precio_proveedor": {
+        "tipo":"Line",
+        "data": [
+            {"fecha": "2025-01-01", "costo": 10.5},
+            { "fecha": "2026-01-01", "costo": 10.5 },
+            { "fecha": "2026-02-01", "costo": 11.2 },
+            { "fecha": "2026-03-01", "costo": 9.8 },
+            { "fecha": "2026-04-01", "costo": 12.3 },
+            { "fecha": "2026-05-01", "costo": 10.9 },
+            { "fecha": "2026-06-01", "costo": 11.7 }
+        ]
+    },
+    "cantidad_pedida_mes": {
+        "tipo":"Bar",
+        "data": [
+            { "mes": "2025 JUL", "botellas_vendidas": 45 },
+            { "mes": "2025 AUG", "botellas_vendidas": 52 },
+            { "mes": "2025 SEP", "botellas_vendidas": 38 },
+            { "mes": "2025 OCT", "botellas_vendidas": 65 },
+            { "mes": "2025 NOV", "botellas_vendidas": 58 },
+            { "mes": "2025 DEC", "botellas_vendidas": 85 },
+            { "mes": "2026 JAN", "botellas_vendidas": 42 },
+            { "mes": "2026 FEB", "botellas_vendidas": 48 },
+            { "mes": "2026 MAR", "botellas_vendidas": 55 },
+            { "mes": "2026 APR", "botellas_vendidas": 60 },
+            { "mes": "2026 MAY", "botellas_vendidas": 72 },
+            { "mes": "2026 JUN", "botellas_vendidas": 68 }
+        ]
+    }
+}
+]
+
