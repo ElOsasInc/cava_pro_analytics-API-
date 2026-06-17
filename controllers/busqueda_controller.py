@@ -2,6 +2,7 @@ from models import Busqueda
 from typing import List, Dict, Any
 from fastapi import HTTPException, status
 from fastapi.responses import RedirectResponse
+from urllib.parse import urlencode
 
 class BusquedaController:
     def __init__(self, db_connection):
@@ -26,7 +27,21 @@ class BusquedaController:
                     return RedirectResponse(url="/dashboard/", status_code=303)
                 case 1:
                     if(parametros[0].clase == "vino"):
-                        return "stats vino"
+                        if(parametros[0].parametro):
+                            datos = {
+                                "vino_key": parametros[0].parametro
+                            }
+                            if(busqueda.fecha_inicio != None):
+                                datos["ini"] = busqueda.fecha_inicio
+                            if(busqueda.fecha_fin != None):
+                                datos["fin"] = busqueda.fecha_fin
+                            get_datos = urlencode(datos)
+                            return RedirectResponse(url=f"/vino_stats/?{get_datos}", status_code=303)
+                        else:
+                            raise HTTPException(
+                                status_code=status.HTTP_404_NOT_FOUND,
+                                detail=f"La búsqueda no existe"
+                            )
                     elif(parametros[0].clase == "proveedor"):
                         return "stats proveedor"
                 case 2:
@@ -36,9 +51,6 @@ class BusquedaController:
                         return "comparacion de proveedores"
                     elif(no_clases["vinos"] == no_clases["proveedores"]):
                         return "stats vino en el proveedor"
-                case 3:
-                    #if()
-                    pass
                 case _:
                     raise HTTPException(
                         status_code=status.HTTP_404_NOT_FOUND,

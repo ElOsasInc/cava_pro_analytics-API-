@@ -4,6 +4,7 @@ from .calendario_model import CalendarioModel
 from .posicion_botella_model import PosicionBotellaModel
 from .vino_model import VinoModel
 from .busqueda_model import Busqueda, Parametro
+from .vino_stats_model import VinoStatsModel, Busqueda1Vino
 
 __all__ = [
     "Proveedor", "ProveedorModel",
@@ -11,5 +12,6 @@ __all__ = [
     "CalendarioModel",
     "PosicionBotellaModel",
     "VinoModel",
-    "Busqueda", "Parametro"
+    "Busqueda", "Parametro",
+    "VinoStatsModel", "Busqueda1Vino"
 ]
