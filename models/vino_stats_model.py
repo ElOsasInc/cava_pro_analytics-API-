@@ -28,3 +28,21 @@ class VinoStatsModel:
                 ORDER BY df.fecha_key;
             ''')
             return cur.fetchall()
+        
+    def ventas_x_dia_semana(self, rango: Busqueda1Vino) -> List[Dict[str, Any]]:
+        with self.db.cursor() as cur:
+            cur.execute(f'''
+                SELECT dia_nombre as dia, SUM(ml) as total_ml, SUM(precio) as ganancia_total
+                FROM dim_fecha as df
+                LEFT JOIN (
+                    SELECT *
+                    FROM hechos_ventas as hv
+                    INNER JOIN dim_botella as db ON db.botella_key = hv.botella_key
+                    INNER JOIN dim_vino as dv ON dv.vino_key = db.vino_key
+                    WHERE db.vino_key = {rango.vino_key}
+                ) as rv ON rv.fecha_key = df.fecha_key
+                WHERE df.fecha_key BETWEEN '{rango.fecha_inicio}' AND '{rango.fecha_fin}'
+                GROUP BY dia_nombre, EXTRACT(ISODOW FROM df.fecha_key)
+                ORDER BY EXTRACT(ISODOW FROM df.fecha_key);
+            ''')
+            return cur.fetchall()

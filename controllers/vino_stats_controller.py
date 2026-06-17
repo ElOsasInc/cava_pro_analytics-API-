@@ -13,6 +13,10 @@ class VinoStatsController:
                 "ventas_x_dia": {
                     "tipo": "Bar",
                     "data": self.vino_stats_model.ventas_x_dia(rango)
+                },
+                "ventas_x_dia_semana": {
+                    "tipo": "Bar",
+                    "data": self.vino_stats_model.ventas_x_dia_semana(rango)
                 }
             }
             return vino_stats
